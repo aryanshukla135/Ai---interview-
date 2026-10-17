@@ -7,7 +7,12 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-    origin: ["http://localhost:5173", "http://127.0.0.1:5173"],
+    origin: (origin, callback) => {
+        if (!origin || /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin)) {
+            return callback(null, true);
+        }
+        return callback(new Error("Origin is not allowed by CORS"));
+    },
     credentials: true
 }));
 
@@ -26,7 +31,11 @@ app.use((error, req, res, next) => {
     }
 
     console.error("Unhandled server error:", error);
-    return res.status(500).json({ message: "Something went wrong on the server" });
+    return res.status(500).json({
+        message: process.env.NODE_ENV === "production"
+            ? "Something went wrong on the server"
+            : error.message || "Something went wrong on the server"
+    });
 });
 
 module.exports = app ;

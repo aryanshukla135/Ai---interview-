@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1420" viewBox="0 0 1600 1420" role="img" aria-labelledby="title description">
+  <title id="title">Interview AI application flowchart</title>
+  <desc id="description">A clear flowchart showing authentication, interview report generation, dashboard display, MongoDB storage, and PDF download.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b0d10"/>
+      <stop offset="100%" stop-color="#171b24"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#e9005b"/>
+      <stop offset="100%" stop-color="#b36ce7"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#000000" flood-opacity=".28"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#aab1bd"/>
+    </marker>
+    <style>
+      .title { fill: #f5f6f8; font: 700 38px Arial, sans-serif; }
+      .subtitle { fill: #aab1bd; font: 400 17px Arial, sans-serif; }
+      .group-title { fill: #f5f6f8; font: 700 18px Arial, sans-serif; }
+      .node-title { fill: #f5f6f8; font: 700 17px Arial, sans-serif; }
+      .node-text { fill: #c5cad3; font: 400 14px Arial, sans-serif; }
+      .label { fill: #e971a1; font: 700 13px Arial, sans-serif; }
+      .arrow { fill: none; stroke: #aab1bd; stroke-width: 2.5; marker-end: url(#arrow); }
+      .dashed { stroke-dasharray: 8 7; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1420" fill="url(#background)"/>
+  <rect x="38" y="34" width="1524" height="1352" rx="24" fill="none" stroke="#303640" stroke-width="2"/>
+
+  <text x="800" y="86" text-anchor="middle" class="title">Interview AI — Application Flow</text>
+  <text x="800" y="119" text-anchor="middle" class="subtitle">From user authentication to AI report generation and PDF download</text>
+
+  <!-- Group panels -->
+  <rect x="75" y="165" width="430" height="1030" rx="18" fill="#11161d" stroke="#303640" stroke-width="2"/>
+  <rect x="545" y="165" width="520" height="1030" rx="18" fill="#11161d" stroke="#303640" stroke-width="2"/>
+  <rect x="1105" y="165" width="420" height="1030" rx="18" fill="#11161d" stroke="#303640" stroke-width="2"/>
+
+  <rect x="75" y="165" width="430" height="58" rx="18" fill="#1d222b"/>
+  <rect x="545" y="165" width="520" height="58" rx="18" fill="#1d222b"/>
+  <rect x="1105" y="165" width="420" height="58" rx="18" fill="#1d222b"/>
+  <text x="105" y="201" class="group-title">USER &amp; FRONTEND</text>
+  <text x="575" y="201" class="group-title">BACKEND &amp; AI</text>
+  <text x="1135" y="201" class="group-title">OUTPUTS &amp; STORAGE</text>
+
+  <!-- Left nodes -->
+  <g filter="url(#shadow)">
+    <rect x="125" y="255" width="330" height="72" rx="12" fill="#202632" stroke="#59616d"/>
+    <rect x="125" y="370" width="330" height="82" rx="12" fill="#202632" stroke="#59616d"/>
+    <rect x="125" y="500" width="330" height="110" rx="12" fill="#202632" stroke="#59616d"/>
+    <rect x="125" y="665" width="330" height="92" rx="12" fill="#202632" stroke="#59616d"/>
+    <rect x="125" y="812" width="330" height="88" rx="12" fill="#202632" stroke="#59616d"/>
+    <rect x="125" y="954" width="330" height="92" rx="12" fill="#202632" stroke="#59616d"/>
+  </g>
+  <text x="290" y="284" text-anchor="middle" class="node-title">1. Register / Login</text>
+  <text x="290" y="307" text-anchor="middle" class="node-text">JWT authentication with HTTP-only cookie</text>
+  <text x="290" y="402" text-anchor="middle" class="node-title">2. Create Interview Plan</text>
+  <text x="290" y="426" text-anchor="middle" class="node-text">Enter job description</text>
+  <text x="290" y="446" text-anchor="middle" class="node-text">Upload PDF or add self-description</text>
+  <text x="290" y="532" text-anchor="middle" class="node-title">3. Validate User Input</text>
+  <text x="290" y="558" text-anchor="middle" class="node-text">Job description is required</text>
+  <text x="290" y="580" text-anchor="middle" class="node-text">PDF must be valid and under 3 MB</text>
+  <text x="290" y="602" text-anchor="middle" class="node-text">Resume or self-description is required</text>
+  <text x="290" y="697" text-anchor="middle" class="node-title">4. Submit Request</text>
+  <text x="290" y="722" text-anchor="middle" class="node-text">Axios multipart/form-data request</text>
+  <text x="290" y="844" text-anchor="middle" class="node-title">5. Interview Dashboard</text>
+  <text x="290" y="869" text-anchor="middle" class="node-text">View the generated plan</text>
+  <text x="290" y="986" text-anchor="middle" class="node-title">6. Choose a Section</text>
+  <text x="290" y="1012" text-anchor="middle" class="node-text">Technical · Behavioral · Road Map</text>
+
+  <!-- Center nodes -->
+  <g filter="url(#shadow)">
+    <rect x="600" y="255" width="410" height="82" rx="12" fill="#202632" stroke="#59616d"/>
+    <rect x="600" y="390" width="410" height="92" rx="12" fill="#202632" stroke="#59616d"/>
+    <rect x="600" y="535" width="410" height="135" rx="12" fill="#261d2b" stroke="#9d4d78"/>
+    <rect x="600" y="720" width="410" height="118" rx="12" fill="#202632" stroke="#59616d"/>
+    <rect x="600" y="889" width="410" height="90" rx="12" fill="#202632" stroke="#59616d"/>
+    <rect x="600" y="1030" width="410" height="92" rx="12" fill="#202632" stroke="#59616d"/>
+  </g>
+  <text x="805" y="285" text-anchor="middle" class="node-title">7. Authenticate Request</text>
+  <text x="805" y="310" text-anchor="middle" class="node-text">Verify JWT and identify the current user</text>
+  <text x="805" y="420" text-anchor="middle" class="node-title">8. Extract Resume Text</text>
+  <text x="805" y="446" text-anchor="middle" class="node-text">Parse uploaded PDF with pdf-parse</text>
+  <text x="805" y="465" text-anchor="middle" class="node-text">Or use the supplied self-description</text>
+  <text x="805" y="572" text-anchor="middle" class="node-title">9. Google GenAI</text>
+  <text x="805" y="600" text-anchor="middle" class="node-text">Generate structured interview report</text>
+  <text x="805" y="624" text-anchor="middle" class="node-text">Questions · score · skill gaps · roadmap</text>
+  <text x="805" y="648" text-anchor="middle" class="node-text">Return JSON matching the report schema</text>
+  <text x="805" y="757" text-anchor="middle" class="node-title">10. Save Interview Report</text>
+  <text x="805" y="783" text-anchor="middle" class="node-text">Store report, user, title, score and timestamps</text>
+  <text x="805" y="809" text-anchor="middle" class="node-text">MongoDB / Mongoose</text>
+  <text x="805" y="925" text-anchor="middle" class="node-title">11. Generate Resume PDF</text>
+  <text x="805" y="950" text-anchor="middle" class="node-text">Generate HTML with AI and render with Puppeteer</text>
+  <text x="805" y="1067" text-anchor="middle" class="node-title">12. Protected API Response</text>
+  <text x="805" y="1093" text-anchor="middle" class="node-text">Return report JSON or downloadable PDF</text>
+
+  <!-- Right nodes -->
+  <g filter="url(#shadow)">
+    <rect x="1155" y="255" width="320" height="108" rx="12" fill="#202632" stroke="#59616d"/>
+    <rect x="1155" y="430" width="320" height="110" rx="12" fill="#202632" stroke="#59616d"/>
+    <rect x="1155" y="607" width="320" height="110" rx="12" fill="#202632" stroke="#59616d"/>
+    <rect x="1155" y="784" width="320" height="110" rx="12" fill="#202632" stroke="#59616d"/>
+    <rect x="1155" y="961" width="320" height="110" rx="12" fill="#261d2b" stroke="#9d4d78"/>
+  </g>
+  <text x="1315" y="286" text-anchor="middle" class="node-title">MongoDB</text>
+  <text x="1315" y="313" text-anchor="middle" class="node-text">Persist user-owned reports</text>
+  <text x="1315" y="337" text-anchor="middle" class="node-text">Fetch recent plans and report details</text>
+  <text x="1315" y="461" text-anchor="middle" class="node-title">Technical Questions</text>
+  <text x="1315" y="488" text-anchor="middle" class="node-text">Expandable questions with</text>
+  <text x="1315" y="510" text-anchor="middle" class="node-text">intentions and suggested answers</text>
+  <text x="1315" y="638" text-anchor="middle" class="node-title">Behavioral Questions</text>
+  <text x="1315" y="665" text-anchor="middle" class="node-text">STAR-method practice stories</text>
+  <text x="1315" y="687" text-anchor="middle" class="node-text">with suggested answers</text>
+  <text x="1315" y="815" text-anchor="middle" class="node-title">Skill Gaps &amp; Match Score</text>
+  <text x="1315" y="842" text-anchor="middle" class="node-text">Focus areas and profile alignment</text>
+  <text x="1315" y="864" text-anchor="middle" class="node-text">shown on the insights panel</text>
+  <text x="1315" y="992" text-anchor="middle" class="node-title">Download PDF</text>
+  <text x="1315" y="1019" text-anchor="middle" class="node-text">Generate formatted A4 resume</text>
+  <text x="1315" y="1041" text-anchor="middle" class="node-text">and download it in the browser</text>
+
+  <!-- Flow arrows -->
+  <path d="M290 327 L290 370" class="arrow"/>
+  <path d="M290 452 L290 500" class="arrow"/>
+  <path d="M290 610 L290 665" class="arrow"/>
+  <path d="M455 711 L600 296" class="arrow dashed"/>
+  <path d="M805 337 L805 390" class="arrow"/>
+  <path d="M805 482 L805 535" class="arrow"/>
+  <path d="M805 670 L805 720" class="arrow"/>
+  <path d="M1010 779 L1155 309" class="arrow dashed"/>
+  <path d="M805 838 L805 889" class="arrow"/>
+  <path d="M805 979 L805 1030" class="arrow"/>
+  <path d="M1010 1076 L1155 1016" class="arrow"/>
+  <path d="M1155 309 L455 856" class="arrow dashed"/>
+  <path d="M455 856 L600 779" class="arrow dashed"/>
+  <path d="M1010 779 L1155 485" class="arrow"/>
+  <path d="M1010 779 L1155 662" class="arrow"/>
+  <path d="M1010 779 L1155 839" class="arrow"/>
+  <path d="M455 1000 L600 1080" class="arrow dashed"/>
+
+  <text x="525" y="410" class="label" transform="rotate(-38 525 410)">API request</text>
+  <text x="1060" y="600" class="label" transform="rotate(-68 1060 600)">saved report</text>
+  <text x="1060" y="1025" class="label" transform="rotate(-23 1060 1025)">PDF response</text>
+
+  <rect x="100" y="1240" width="1400" height="92" rx="14" fill="#171c24" stroke="#3d444d"/>
+  <text x="800" y="1275" text-anchor="middle" class="node-title">Core flow</text>
+  <text x="800" y="1305" text-anchor="middle" class="node-text">Authenticate → Collect profile → Generate with AI → Save in MongoDB → Practice → Download PDF</text>
+</svg>

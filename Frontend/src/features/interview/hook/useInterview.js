@@ -50,16 +50,13 @@ export const useInterview = () =>{
         }, [setLoading, setReports])
 
     const getResumePdf = useCallback(async (interviewId) => {
-        setLoading(true);
         try {
             return await downloadResumePdf(interviewId);
         } catch (error) {
             console.error("Error generating resume PDF:", error);
             throw error;
-        } finally {
-            setLoading(false);
         }
-    }, [setLoading])
+    }, [])
     return {
         loading,
         report,

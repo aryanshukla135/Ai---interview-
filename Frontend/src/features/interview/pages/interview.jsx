@@ -68,7 +68,7 @@ const Interview = () => {
       document.body.appendChild(link)
       link.click()
       link.remove()
-      URL.revokeObjectURL(url)
+      window.setTimeout(() => URL.revokeObjectURL(url), 1000)
     } catch (error) {
       setPdfError(error.response?.data?.message || 'Unable to generate the PDF.')
     } finally {

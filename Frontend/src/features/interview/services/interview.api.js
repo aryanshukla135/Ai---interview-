@@ -38,5 +38,8 @@ export const downloadResumePdf = async (interviewId) => {
     const response = await api.get(`/api/interview/report/${interviewId}/pdf`, {
         responseType: "blob",
     });
+    if (!response.data || response.data.size === 0) {
+        throw new Error("The server returned an empty PDF");
+    }
     return response.data;
 }
